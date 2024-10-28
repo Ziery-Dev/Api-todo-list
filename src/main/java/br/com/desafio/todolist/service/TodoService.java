@@ -13,14 +13,13 @@ public class TodoService {
 
     @Autowired
     TodoRepository acao; //injeção de dependencia da classe repositorio
-    @Autowired
-    private TodoRepository todoRepository;
+
 
 
     //Por se tratar de um TodoList, todos o métodos retornam a lista de tarefas
 
     //método que cria uma tarefa
-    public List<Todo>creat(Todo obj){
+    public List<Todo>create(Todo obj){
         acao.save(obj);
         return list();
     }
@@ -28,7 +27,7 @@ public class TodoService {
     //Método de consulta que retorna na ordem de prioridade e depois por nome
     public  List <Todo> list(){
         Sort sort =  Sort.by("prioridade").descending().and(Sort.by("nome").ascending()); //ordenação do que irá ser exibido primeiro
-       return todoRepository.findAll(sort);
+       return acao.findAll(sort);
     }
 
     //atualizar uma tarefa
