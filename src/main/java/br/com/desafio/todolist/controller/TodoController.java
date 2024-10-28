@@ -2,6 +2,7 @@ package br.com.desafio.todolist.controller;
 
 import br.com.desafio.todolist.entity.Todo;
 import br.com.desafio.todolist.service.TodoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class TodoController {
     TodoService service; //Injeção de dependecia da classe service
 
     @PostMapping
-   public  List<Todo> create(@RequestBody Todo obj){ //RequesBody significa que as informações serão passadas no corpo da requisição
+   public  List<Todo> create(@RequestBody  @Valid Todo obj){ //RequesBody significa que as informações serão passadas no corpo da requisição
        return service.create(obj);
    }
 
