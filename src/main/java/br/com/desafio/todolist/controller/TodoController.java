@@ -39,7 +39,6 @@ public class TodoController {
 
 
 
-    //Obs, poderia se passado um endpooin em cada GetMapping, Delet, etc. como não foi passado, o padrão é o "todos"
-
+    
 
 }

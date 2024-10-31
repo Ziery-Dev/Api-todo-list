@@ -10,7 +10,7 @@ public class Todo{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank //indica que o nome não pode ser branco
+    @NotBlank //indica que o nome não pode ficar em branco
     private String nome;
     @NotBlank
     private String descricao;
